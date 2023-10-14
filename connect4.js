@@ -62,9 +62,7 @@ function findSpotForCol(x) {
   // TODO: write the real version of this, rather than always returning 0
   for (let i = board.length - 1; i > -1; i--) {
     if (board[i][x] !== null) {
-      console.log("blocked");
     } else {
-      console.log("not here");
       return i;
     }
   }
@@ -103,9 +101,9 @@ function handleClick(evt) {
   }
 
   // place piece in board and add to HTML table
+  placeInTable(y, x);
   // TODO: add line to update in-memory board
   board[y][x] = currPlayer;
-  placeInTable(y, x);
 
   // check for win
   if (checkForWin()) {
